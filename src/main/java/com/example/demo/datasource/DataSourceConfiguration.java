@@ -12,21 +12,21 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class DataSourceConfiguration { 
 	
-	@Bean(name = "primaryDataSource")
+	@Bean(name = "teacherDataSource")
 	@Primary  //配置该数据源为主数据源
-	@Qualifier("primaryDataSource")
-	@ConfigurationProperties(prefix = "datasource.primary")
-	public DataSource primaryDataSource() {
+	@Qualifier("teacherDataSource")
+	@ConfigurationProperties(prefix = "spring.datasource.teacher")
+	public DataSource teacherDataSource() {
 		System.out.println("-------------------- primaryDataSource初始化 ---------------------");
 		return DataSourceBuilder.create().build();
 	}
 
 	
-	@Bean(name = "secondDataSource")
-	@Qualifier("secondDataSource")
-	@ConfigurationProperties(prefix = "datasource.second")
-	public DataSource secondDataSource() {
-		System.out.println("-------------------- secondDataSource初始化---------------------");
+	@Bean(name = "studentDataSource")
+	@Qualifier("studentDataSource")
+	@ConfigurationProperties(prefix = "spring.datasource.student")
+	public DataSource studentDataSource() {
+		System.out.println("-------------------- studentDataSource初始化---------------------");
 		return DataSourceBuilder.create().build();
 	}
 	

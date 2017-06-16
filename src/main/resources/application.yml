@@ -1,0 +1,22 @@
+#数据库配置
+#主数据源数据库
+spring:
+  datasource:
+    teacher:
+      url: jdbc:mysql://localhost:3306/teacher?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+    student:
+      url: jdbc:mysql://localhost:3306/student?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      
+      
+#jpa 配置
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
